@@ -50,19 +50,19 @@ if ( ! function_exists( 'is_product_taxonomy' ) ) {
 	}
 }
 
-if ( ! function_exists( 'is_product_category' ) ) {
+if ( ! function_exists( 'is_product_taxonomy' ) ) {
 
 	/**
-	 * is_product_category - Returns true when viewing a product category.
+	 * is_product_taxonomy - Returns true when viewing a product taxonomy archive.
 	 *
 	 * @access public
-	 * @param string $term (default: '') The term slug your checking for. Leave blank to return true on any.
 	 * @return bool
 	 */
-	function is_product_category( $term = '' ) {
-		return is_tax( 'product_cat', $term );
-	}
+	function is_product_taxonomy() {
+		return is_tax( array('product_cat', 'product_tag') );
+    }
 }
+
 
 if ( ! function_exists( 'is_product_tag' ) ) {
 
