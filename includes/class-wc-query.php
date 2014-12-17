@@ -415,6 +415,10 @@ class WC_Query {
 	 * @return void
 	 */
 	public function product_query( $q ) {
+		// Check that product post type has been requested
+		if ( $q->get( 'post_type' ) != 'product' )
+   		return;
+
 
 		// Meta query
 		$meta_query = $this->get_meta_query( $q->get( 'meta_query' ) );
